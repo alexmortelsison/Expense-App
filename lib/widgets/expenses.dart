@@ -26,13 +26,24 @@ class _ExpensesState extends State<Expenses> {
       category: Category.leisure,
     ),
   ];
+
+  void _openAddExpendeOverlay() {
+    showModalBottomSheet(
+      context: context,
+      builder: (ctx) => const Text('Modal Bottom Sheet'),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text('Expense App'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              _openAddExpendeOverlay();
+            },
             icon: const Icon(Icons.add),
           ),
         ],
